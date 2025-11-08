@@ -14,4 +14,3 @@ else
     echo "編譯失敗！"
     exit 1
 fi
-
