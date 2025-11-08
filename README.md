@@ -22,7 +22,7 @@ This repository documents all laboratory assignments, code implementations, and 
 ├── .gitignore                          # Git 忽略檔案 / Git ignore file
 │
 ├── LAB-1/                              # 實驗一：TCP Socket Programming
-│   ├── Homework/                      # 作業檔案 / Assignment Files
+│   ├── Homework/                       # 作業檔案 / Assignment Files
 │   │   ├── README.md                   # 作業說明文件（中文）/ Assignment Documentation (Chinese)
 │   │   ├── README_EN.md                # 作業說明文件（英文）/ Assignment Documentation (English)
 │   │   ├── Client.c                    # 客戶端程式碼 / Client Code
@@ -78,11 +78,11 @@ This repository documents all laboratory assignments, code implementations, and 
 │   │   │   ├── Server.java             # 多群組動態聊天室伺服器（Java）
 │   │   │   └── Client.java             # 多群組動態聊天室客戶端（Java）
 │   │   ├── Demo/                       # 功能測試截圖 / Feature Test Screenshots
-│   │   │   ├── Demo_01.Connect_*.PNG    # 連線測試截圖
+│   │   │   ├── Demo_01.Connect_*.PNG   # 連線測試截圖
 │   │   │   ├── Demo_02.LEAVE_*.PNG     # 離開群組測試截圖
 │   │   │   ├── Demo_03.CHANGE_*.PNG    # 群組切換測試截圖
 │   │   │   ├── Demo_04.EXIT_*.PNG      # 伺服器關閉測試截圖
-│   │   │   ├── Demo_05.HISTORY.PNG    # 歷史記錄功能測試截圖
+│   │   │   ├── Demo_05.HISTORY.PNG     # 歷史記錄功能測試截圖
 │   │   │   └── Demo_06.ServerBroadcast_*.PNG  # 伺服器廣播測試截圖
 │   │   ├── Compile.sh                  # 編譯腳本 / Compilation Script
 │   │   ├── server.sh                   # 伺服器啟動腳本 / Server Startup Script
@@ -92,27 +92,57 @@ This repository documents all laboratory assignments, code implementations, and 
 │       ├── Client.java                 # 練習用客戶端程式（Java）
 │       └── Compile.sh                  # 編譯腳本
 │
+├── LAB-5/                              # 實驗五：RESTful API 整合與應用 / Lab 5: RESTful API Integration and Application
+│   ├── README.md                       # 實驗說明文件 / Lab Documentation
+│   ├── q1/                             # 題目一：名言查詢程式 / Question 1: Quotes Query Program
+│   │   ├── src/main/java/q1/
+│   │   │   ├── Main.java               # 主程式：使用 Quotes API 查詢隨機名言
+│   │   │   └── EnvLoader.java          # 環境變數讀取工具類
+│   │   ├── lib/                        # 依賴項 JAR 文件
+│   │   ├── pom.xml                     # Maven 專案配置
+│   │   ├── .env.example                # 環境變數範例文件
+│   │   ├── compile.sh                  # 編譯腳本
+│   │   └── run.sh                      # 執行腳本
+│   ├── q2/                             # 題目二：GeoDB Cities 城市查詢 / Question 2: GeoDB Cities Query
+│   │   ├── src/main/java/q2/
+│   │   │   ├── Main.java               # 主程式：查詢台灣和日本城市資訊
+│   │   │   └── EnvLoader.java          # 環境變數讀取工具類
+│   │   ├── lib/                        # 依賴項 JAR 文件
+│   │   ├── pom.xml                     # Maven 專案配置
+│   │   ├── .env.example                # 環境變數範例文件
+│   │   ├── compile.sh                  # 編譯腳本
+│   │   └── run.sh                      # 執行腳本
+│   └── q3/                             # 題目三：國際城市天氣預報員 / Question 3: International City Weather Forecaster
+│       ├── src/main/java/q3/
+│       │   ├── Main.java               # 主程式：結合 GeoDB 和天氣 API
+│       │   └── EnvLoader.java          # 環境變數讀取工具類
+│       ├── lib/                        # 依賴項 JAR 文件
+│       ├── pom.xml                     # Maven 專案配置
+│       ├── .env.example                # 環境變數範例文件
+│       ├── compile.sh                  # 編譯腳本
+│       └── run.sh                      # 執行腳本
+│
 ├── Exam-1/                             # 第一次上機考試 / First In-Class Exam
 │   ├── LAB1-上機考_2025.pptx           # 考試講義 / Exam Materials
 │   ├── Q1/                             # 題目一 / Question 1
-│   │   ├── Server1.c                  # 伺服器程式
-│   │   ├── Client1.c                  # 客戶端程式
-│   │   ├── Server1.png                # 伺服器執行結果截圖
-│   │   └── Client1.png                # 客戶端執行結果截圖
+│   │   ├── Server1.c                   # 伺服器程式
+│   │   ├── Client1.c                   # 客戶端程式
+│   │   ├── Server1.png                 # 伺服器執行結果截圖
+│   │   └── Client1.png                 # 客戶端執行結果截圖
 │   ├── Q2/                             # 題目二 / Question 2
-│   │   ├── Server2.c                  # 伺服器程式
-│   │   ├── Client2.c                  # 客戶端程式
-│   │   ├── Server2.png                # 伺服器執行結果截圖
-│   │   └── Client2.png                # 客戶端執行結果截圖
-│   └── Q3(未完成)/                     # 題目三（未完成）/ Question 3 (Incomplete)
+│   │   ├── Server2.c                   # 伺服器程式
+│   │   ├── Client2.c                   # 客戶端程式
+│   │   ├── Server2.png                 # 伺服器執行結果截圖
+│   │   └── Client2.png                 # 客戶端執行結果截圖
+│   └── Q3(未完成)/                      # 題目三（未完成）/ Question 3 (Incomplete)
 │
 ├── Exam-2/                             # 第二次上機考試 / Second In-Class Exam
 │   ├── Q1/                             # 題目一 / Question 1
-│   │   ├── Server1.c                  # 伺服器程式
-│   │   ├── Client1.c                  # 客戶端程式
-│   │   ├── compile.sh                 # 編譯腳本
-│   │   ├── server                     # 編譯後的伺服器執行檔
-│   │   └── client                     # 編譯後的客戶端執行檔
+│   │   ├── Server1.c                   # 伺服器程式
+│   │   ├── Client1.c                   # 客戶端程式
+│   │   ├── compile.sh                  # 編譯腳本
+│   │   ├── server                      # 編譯後的伺服器執行檔
+│   │   └── client                      # 編譯後的客戶端執行檔
 │   ├── Q1V2/                           # 題目一版本二 / Question 1 Version 2
 │   ├── Q2/                             # 題目二 / Question 2
 │   └── Q3/                             # 題目三 / Question 3
@@ -145,7 +175,7 @@ This repository documents all laboratory assignments, code implementations, and 
   - `connect()`, `send()`, `recv()` 函式 / Functions
   - 網路位址結構 (`sockaddr_in`) / Network Address Structure
   - 錯誤處理與連線管理 / Error Handling and Connection Management
-- **狀態 / Status**: ✅ 完成 / Completed
+- **狀態 / Status**: 完成 / Completed
 
 ### LAB-2: TCP Echo Server with Timeout Mechanism
 - **主題 / Topic**: TCP Echo 伺服器與超時機制 / TCP Echo Server with Timeout Mechanism
@@ -159,7 +189,7 @@ This repository documents all laboratory assignments, code implementations, and 
   - 字串驗證邏輯 / String Validation Logic
   - 伺服器端輸入處理 / Server-side Input Processing
   - 客戶端輸入驗證 / Client-side Input Validation
-- **狀態 / Status**: ✅ 完成 / Completed
+- **狀態 / Status**: 完成 / Completed
 
 ### LAB-3: Multi-threaded TCP Chatroom
 - **主題 / Topic**: 多執行緒 TCP 聊天室 / Multi-threaded TCP Chatroom
@@ -174,7 +204,7 @@ This repository documents all laboratory assignments, code implementations, and 
   - pthread_mutex 執行緒同步 / Pthread Mutex Thread Synchronization
   - 共享資源的執行緒安全保護 / Thread-safe Protection of Shared Resources
   - 客戶端連線狀態管理 / Client Connection Status Management
-- **狀態 / Status**: ✅ 完成 / Completed
+- **狀態 / Status**: 完成 / Completed
 
 ### LAB-4: Multi-Group Dynamic Chatroom (Java)
 - **主題 / Topic**: 多群組動態聊天室（Java Socket 程式設計）/ Multi-Group Dynamic Chatroom (Java Socket Programming)
@@ -196,7 +226,35 @@ This repository documents all laboratory assignments, code implementations, and 
   - 最大客戶端數：15
   - 群組數量：3（Group_A、Group_B、Group_C）
   - 每個群組最大成員數：4
-- **狀態 / Status**: ✅ 完成 / Completed
+- **狀態 / Status**: 完成 / Completed
+
+### LAB-5: RESTful API 整合與應用
+- **主題 / Topic**: RESTful API 整合與應用 / RESTful API Integration and Application
+- **內容 / Contents**:
+  - RESTful API 呼叫與資料處理 / RESTful API Calls and Data Processing
+  - HTTP 請求與 JSON 資料解析 / HTTP Requests and JSON Data Parsing
+  - 環境變數管理與 API Key 保護 / Environment Variable Management and API Key Protection
+  - 多 API 整合應用 / Multi-API Integration Application
+- **技術重點 / Technical Focus**:
+  - `kong.unirest` HTTP 客戶端庫 / `kong.unirest` HTTP Client Library
+  - JSON 資料解析與處理 / JSON Data Parsing and Processing
+  - 環境變數讀取機制 / Environment Variable Reading Mechanism
+  - API 速率限制處理 / API Rate Limiting Handling
+  - 分頁資料查詢 / Paginated Data Querying
+  - 天氣代碼轉換與時區處理 / Weather Code Conversion and Timezone Handling
+- **題目內容 / Questions**:
+  - **Q1**: 使用 Quotes API 查詢隨機名言並格式化輸出 / Query random quotes using Quotes API and format output
+  - **Q2**: 使用 GeoDB Cities API 查詢台灣和日本的城市資訊 / Query city information for Taiwan and Japan using GeoDB Cities API
+  - **Q3**: 結合 GeoDB Cities API 和 Open-Meteo API 實現城市天氣查詢 / Combine GeoDB Cities API and Open-Meteo API for city weather query
+- **使用的 API / APIs Used**:
+  - Quotes API (RapidAPI): 提供隨機名言 / Provides random quotes
+  - GeoDB Cities API (RapidAPI): 提供全球城市地理資訊 / Provides global city geographic information
+  - Open-Meteo API: 提供免費天氣資訊 / Provides free weather information
+- **開發環境 / Development Environment**:
+  - Java 版本：OpenJDK 21
+  - 依賴管理：Maven (pom.xml) + 手動管理 JAR 文件
+  - 測試環境：DietPi v9.18.1
+- **狀態 / Status**: 完成 / Completed
 
 ## 課程進度 / Course Progress
 
@@ -204,6 +262,7 @@ This repository documents all laboratory assignments, code implementations, and 
 - [x] **LAB-2**: TCP Echo Server with Timeout - 完成 / Completed
 - [x] **LAB-3**: Multi-threaded TCP Chatroom - 完成 / Completed
 - [x] **LAB-4**: Multi-Group Dynamic Chatroom (Java) - 完成 / Completed
+- [x] **LAB-5**: RESTful API 整合與應用 - 完成 / Completed
 - [x] **Exam-1**: 第一次上機考試 - 完成 / Completed
 - [x] **Exam-2**: 第二次上機考試 - 完成 / Completed
 - [x] **Exam-3**: 第三次上機考試 - 完成 / Completed
@@ -239,7 +298,8 @@ This repository documents all laboratory assignments, code implementations, and 
   - DietPi v9.18.1 - Java 開發環境（LAB-4）
 - **編譯器 / Compiler**: 
   - GCC (C 語言) / GCC (C Language)
-  - OpenJDK 17 (Java) / OpenJDK 17 (Java)
+  - OpenJDK 17 (Java) / OpenJDK 17 (Java) - LAB-4
+  - OpenJDK 21 (Java) / OpenJDK 21 (Java) - LAB-5
 - **開發工具 / Development Tools**: 
   - 文字編輯器 (Vim/VS Code) / Text Editor
   - 終端機 (Terminal) / Terminal
@@ -264,6 +324,8 @@ gcc -o client Client.c
 
 ### Java 程式編譯與執行 / Compiling and Running Java Programs
 
+#### LAB-4: Multi-Group Dynamic Chatroom
+
 ```bash
 # 進入實驗目錄 / Navigate to lab directory
 cd LAB-4/Homework
@@ -285,6 +347,25 @@ java Server
 java Client
 # 或使用啟動腳本 / Or use startup script
 ../client.sh
+```
+
+#### LAB-5: RESTful API 整合與應用
+
+```bash
+# 進入題目目錄 / Navigate to question directory
+cd LAB-5/q1  # 或 q2, q3
+
+# 配置環境變數 / Configure environment variables
+# 複製 .env.example 為 .env 並填入 API keys
+cp .env.example .env
+# 編輯 .env 文件，填入您的 API keys
+
+# 編譯 Java 程式 / Compile Java programs
+chmod +x compile.sh
+./compile.sh
+
+# 執行程式 / Run program
+./run.sh
 ```
 
 ### 執行程式 / Running Programs
@@ -328,6 +409,7 @@ java Client
 - 從基礎 TCP Socket 到進階多執行緒聊天室 / From basic TCP Socket to advanced multi-threaded chatroom
 - 涵蓋 C 語言與 Java 兩種語言實作 / Covers implementations in both C and Java languages
 - 包含多種網路程式設計技術 / Includes various network programming techniques
+- RESTful API 整合與 HTTP 客戶端應用 / RESTful API integration and HTTP client applications
 
 ## 注意事項 / Important Notes
 
@@ -345,6 +427,6 @@ java Client
 
 ---
 
-**最後更新 / Last Updated**: 2025年01月 / January 2025
-**版本 / Version**: 2.0
+**最後更新 / Last Updated**: 2025年11月 / November 2025
+**版本 / Version**: 2.1
 **授權 / License**: 僅供學習使用 / For Educational Use Only
