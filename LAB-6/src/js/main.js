@@ -21,6 +21,22 @@ logoutBtn.addEventListener('click', () => {
     supabaseClient.auth.signOut();
 });
 
+// 檢查初始會話狀態
+supabaseClient.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+        currentUser = session.user;
+        loginBtn.style.display = 'none';
+        logoutBtn.style.display = 'block';
+        fetchMessages();
+        subscribeToMessages();
+    } else {
+        currentUser = null;
+        loginBtn.style.display = 'block';
+        logoutBtn.style.display = 'none';
+        messagesDiv.innerHTML = '<div>請登入以查看訊息。</div>';
+    }
+});
+
 supabaseClient.auth.onAuthStateChange((event, session) => {
     if (event === "SIGNED_IN" && session) {
         currentUser = session.user;
@@ -28,7 +44,7 @@ supabaseClient.auth.onAuthStateChange((event, session) => {
         logoutBtn.style.display = 'block';
         fetchMessages();
         subscribeToMessages();
-    } else {
+    } else if (event === "SIGNED_OUT") {
         currentUser = null;
         loginBtn.style.display = 'block';
         logoutBtn.style.display = 'none';
@@ -57,7 +73,7 @@ function formatTime(timestamp) {
     let hours = date.getHours();
     const minutes = date.getMinutes().toString().padStart(2, '0');
 
-    const period = hours >= 12 ? '下午' : '上午';
+    const period = hours >= 12 ? 'p.m.' : 'a.m.';
     hours = hours % 12;
     if (hours === 0) hours = 12;
 
@@ -79,15 +95,21 @@ function displayMessage(msg) {
 sendForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (!currentUser || !messageInput.value.trim()) return;
+    // 確保有當前用戶
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session || !messageInput.value.trim()) {
+        console.log('無法傳送：未登入或訊息為空');
+        return;
+    }
 
     const { error } = await supabaseClient.from('messages').insert({
         content: messageInput.value.trim(),
-        user_name: currentUser.user_metadata.full_name || 'Anonymous'
+        user_name: session.user.user_metadata?.full_name || session.user.email || 'Anonymous'
     });
 
     if (error) {
         console.error('傳送訊息失敗:', error);
+        alert('傳送訊息失敗: ' + error.message);
     } else {
         messageInput.value = '';
     }
